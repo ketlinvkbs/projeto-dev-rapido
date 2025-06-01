@@ -21,7 +21,7 @@ class App(tk.Tk):
         self.dados_baixados = False
 
         # Imagem de fundo
-        imagem_path = "imagens/fundo_floresta.jpg"
+        imagem_path = "fundoqueimadas.jpg"
         if os.path.exists(imagem_path):
             self.imagem_fundo = Image.open(imagem_path).resize((self.winfo_screenwidth(), self.winfo_screenheight()))
             self.foto_fundo = ImageTk.PhotoImage(self.imagem_fundo)
@@ -49,7 +49,7 @@ class App(tk.Tk):
                           font=("Helvetica", 20), fg="white", bg="#0B3D2E")
         titulo.pack(pady=20)
 
-        imagem_logo = Image.open("logo queimadas.jpg").resize((200, 200))
+        imagem_logo = Image.open("logoqueimadas.jpg").resize((200, 200))
         foto_logo = ImageTk.PhotoImage(imagem_logo)
         logo = tk.Label(self.main_frame, image=foto_logo, bg="#0B3D2E")
         logo.image = foto_logo

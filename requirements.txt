@@ -1,0 +1,6 @@
+pillow>=10.0
+customtkinter>=0.3
+pandas>=2.0
+seaborn>=0.12
+matplotlib>=3.7
+basedosdados>=1.6
