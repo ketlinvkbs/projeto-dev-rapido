@@ -1,81 +1,84 @@
-# 🔥 QUIEMADAS
+# Projeto de Conscientização sobre Queimadas no Brasil
 
-> Um projeto educacional interativo desenvolvido em **Python + Tkinter**, com foco em **educação ambiental** sobre queimadas no Brasil.
+## 📝 Descrição
 
----
+Este projeto é uma aplicação interativa desenvolvida em Python que visa conscientizar sobre a problemática das queimadas no Brasil. A aplicação apresenta dados, um mapa interativo e um quiz para testar os conhecimentos do usuário sobre o tema.
 
-## 📚 Sobre o Projeto
+## ✨ Funcionalidades
 
-O **Quiemadas** é uma aplicação desktop desenvolvida como parte de um projeto universitário que visa promover a **conscientização ambiental** sobre os efeitos e causas das queimadas no Brasil.  
+* **Tela de Conscientização:** Exibe informações e dados relevantes sobre as queimadas.
+* **Quiz Interativo:** Um jogo de perguntas e respostas para engajar e educar o usuário.
+* **Ranking de Jogadores:** Salva e exibe a pontuação dos usuários no quiz.
+* **Mapa de Calor:** Apresenta um mapa do Brasil destacando os estados com maiores focos de queimadas.
+* **Processamento de Dados:** Scripts para baixar, extrair e processar dados geográficos e de queimadas.
 
-Com uma **interface gráfica acessível**, conteúdos educativos e um **quiz interativo**, a aplicação busca engajar principalmente o público jovem e estudantes de escolas e universidades.
+## 🔧 Configuração e Instalação
 
----
+Para executar este projeto, você precisará ter o Python 3 instalado em seu sistema. Siga os passos abaixo para configurar o ambiente.
 
-## 🎯 Objetivos
+**1. Clone o repositório:**
+(Se estiver no GitHub)
+```bash
+git clone [https://github.com/seu-usuario/projeto-dev-rapido.git](https://github.com/seu-usuario/projeto-dev-rapido.git)
+cd projeto-dev-rapido
 
-### Objetivo Geral
-Criar um aplicativo educacional com interface gráfica sobre queimadas, usando Python e Tkinter.
-
-### Objetivos Específicos
-- ✅ Promover o aprendizado com uma linguagem acessível.  
-- ✅ Desenvolver um quiz interativo.  
-- ✅ Criar uma interface amigável e visualmente coerente.  
-- ✅ Estimular o pensamento crítico e sustentável.  
-- ✅ Facilitar a divulgação do conteúdo em ambientes escolares.
-
----
-
-## 👥 Público-Alvo
-
-- Estudantes do ensino fundamental, médio e superior  
-- Professores da área de ciências ou geografia  
-- Pessoas interessadas em educação ambiental  
-- ONGs ou projetos educativos  
-
----
-
-## 🖥️ Tecnologias Utilizadas
-
-| Tecnologia | Descrição |
-|------------|-----------|
-| ![Python](https://img.shields.io/badge/Python-3.10-blue) | Linguagem principal do projeto |
-| Tkinter    | Interface gráfica nativa do Python |
-| PIL (Pillow) | Manipulação de imagens |
-| PEP8       | Guia de estilo adotado no código |
-
----
-
-## 📸 Identidade Visual
-
-- Logotipo simbólico com floresta e chamas  
-- Paleta de cores: tons terrosos (verde escuro, laranja queimado, dourado)  
-- Estilo limpo e acessível, com foco educacional  
-
----
-
-## 🧠 Funcionalidades
-
-- 📝 **Informações educativas** sobre queimadas  
-- ❓ **Quiz interativo** com perguntas e feedback  
-- 🎨 **Interface gráfica** com imagens e navegação simples  
-- 📂 Fácil instalação e execução (sem dependências externas complexas)  
-
----
-
-## 🛠️ Como Executar
-
-### Pré-requisitos
-- Python 3.10+ instalado
-- Biblioteca `Pillow` (caso use imagens adicionais)
+** 2. Instale as dependências:
+As bibliotecas necessárias podem ser instaladas via pip. É altamenterecomendável criar um ambiente virtual (venv) primeiro.
 
 ```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/quiemadas.git
-cd quiemadas
+# Crie e ative um ambiente virtual (opcional, mas recomendado)
+python -m venv venv
+source venv/bin/activate  # No Windows, use: venv\Scripts\activate
+# Instale as bibliotecas
+pip install pygame pandas geopandas requests tqdm
+```
 
-# (Opcional) Instale Pillow
-pip install pillow
+** 3. Baixe e prepare os dados:
+Antes de executar a aplicação principal, é necessário baixar e processar os dados de municípios e focos de queimadas. Execute o script `download_dados.py` para automatizar este processo:
 
-# Execute a aplicação
+```bash
+python download_dados.py
+```
+
+Este script irá:
+- Baixar e extrair os dados dos municípios do site do IBGE.
+- Converter os dados para o formato CSV (`municipios.csv`).
+- Baixar os dados de focos de queimadas.
+- Baixar os shapefiles para a geração de mapas.
+
+## 🚀 Como Executar
+Com o ambiente configurado e os dados processados, inicie a aplicação principal executando o arquivo `main.py`:
+
+```bash
 python main.py
+```
+
+A tela principal da aplicação será aberta, e você poderá navegar entre a tela de conscientização, o quiz e o ranking.
+
+## 📁 Estrutura do Projeto
+```
+.
+├── .vscode/
+│   └── launch.json
+├── gerar_shapefile/
+│   └── gerar_regioes.py
+├── shapefiles/
+│   └── ...
+├── baixar_municipios.py
+├── baixar_shapefile.py
+├── converter_municipios.py
+├── download_dados.py
+├── extrair_municipios.py
+├── gera_municipios_csv.py
+├── main.py
+├── mapa_regioes.py
+├── municipios.csv
+├── perguntas.py
+├── queimadas.csv
+├── ranking_manager.py
+├── tela_conscientizacao.py
+├── tela_quiz.py
+├── tela_ranking.py
+├── usuarios.csv
+└── README.md
+```
